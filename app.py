@@ -30,7 +30,7 @@ st.title("🍩 Insulation Tube Counter")
 
 @st.cache_resource
 def load_model():
-    return YOLO("runs/detect/train10/weights/best.pt")
+    return YOLO("best.pt")
 
 
 try:
@@ -180,4 +180,5 @@ if img_file_buffer is not None:
     metric_placeholder.metric("Total Tubes", len(st.session_state["points"]))
 
 else:
+
     st.info("Please upload a photo to start.")
